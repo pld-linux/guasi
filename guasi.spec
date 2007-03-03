@@ -59,12 +59,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/lib/libguasi.so
-%{_libdir}/lib/libguasi.la
+%{_libdir}/libguasi.so
+%{_libdir}/libguasi.la
 %{_includedir}/guasi.h
 %{_includedir}/guasi_syscalls.h
 %{_mandir}/man3/guasi.3*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib/libguasi.a
+%{_libdir}/libguasi.a
