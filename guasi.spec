@@ -1,4 +1,5 @@
 Summary:	Generic Userspace Asyncronous Syscall Interface
+Summary(pl.UTF-8):	Ogólny interfejs asynchronicznych wywołań systemowych
 Name:		guasi
 Version:	0.17
 Release:	0.1
@@ -18,21 +19,39 @@ at a later time (hence not blocking the submitter thread). The GUASI
 library can be used as a complement to standard event retrieval
 interfaces like poll(2), select(2), or epoll(4).
 
+%description -l pl.UTF-8
+Biblioteka GUASI implementuje oparty na wątkach ogólny silnik wywołań
+asynchronicznych, mający nadać asynchroniczne zachowanie zwykle
+synchronicznym wywołaniom. Może być używany do obudowania dowolnych
+synchronicznych wywołań tak, że wywołanie może być zaszeregowane do
+wykonania, a jego wynik pobrany później (tym samym nie blokując wątku
+zlecającego). Biblioteka GUASI może być używana jako dopełnienie
+standardowych interfejsów pobierania zdarzeń, takich jak poll(2),
+select(2) czy epoll(4).
+
 %package devel
 Summary:	Header files for GUASI library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GUASI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This is the package containing the header files for GUASI library.
 
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagłówkowe biblioteki GUASI.
+
 %package static
 Summary:	Static GUASI library
+Summary(pl.UTF-8):	Statyczna biblioteka GUASI
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static GUASI library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka GUASI.
 
 %prep
 %setup -q
@@ -59,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libguasi.so
+%attr(755,root,root) %{_libdir}/libguasi.so
 %{_libdir}/libguasi.la
 %{_includedir}/guasi.h
 %{_includedir}/guasi_syscalls.h
