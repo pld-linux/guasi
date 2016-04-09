@@ -1,12 +1,12 @@
 Summary:	Generic Userspace Asyncronous Syscall Interface
 Summary(pl.UTF-8):	Ogólny interfejs asynchronicznych wywołań systemowych
 Name:		guasi
-Version:	0.17
-Release:	0.1
-License:	LGPL
+Version:	0.25
+Release:	1
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.xmailserver.org/%{name}-%{version}.tar.gz
-# Source0-md5:	9f0a0eee7a3688925d10e0f35fad6d67
+# Source0-md5:	ebbd96073b2ce7c7f0be16ebf01b758c
 URL:		http://www.xmailserver.org/guasi-lib.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -75,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/libguasi.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libguasi.so.0
 
 %files devel
 %defattr(644,root,root,755)
