@@ -7,6 +7,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.xmailserver.org/%{name}-%{version}.tar.gz
 # Source0-md5:	ebbd96073b2ce7c7f0be16ebf01b758c
+BuildRequires:	automake
 URL:		http://www.xmailserver.org/guasi-lib.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,6 +58,7 @@ Statyczna biblioteka GUASI.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
